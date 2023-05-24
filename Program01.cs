@@ -262,7 +262,7 @@ class Program
         bool ulangi = true;
         Console.Write("Apakah Anda Akan Memesan Lagi [Y/N] ?/n ");
         string jawab = Console.ReadLine();
-        if (ulangi = (jawab == "Y" || jawab == "y" || jawab == "Yes" || jawab == "YES" || jawab == "yes")
+        if (ulangi = (jawab == "Y" || jawab == "y" || jawab == "Yes" || jawab == "YES" || jawab == "yes"))
         {
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("Selamat datang di TOKO Bajuku!");
@@ -505,8 +505,10 @@ class Program
 
 
             
-            else if (jawab == "n" || jawab == "N")
-                    ulangi = false;
+                if (jawab == "n" || jawab == "N") {
+                        ulangi = false;
+                } 
+            
             } while (ulangi);
 
             Console.WriteLine("Oke, Terimakasih...");
