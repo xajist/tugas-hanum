@@ -72,22 +72,29 @@ class Program
                             Console.WriteLine("Total harga: " + total);
                             Console.WriteLine("Total pembayaran: " + total);
 
-                            Console.Write("Masukkan jumlah uang yang dibayarkan: ");
-                            if (int.TryParse(Console.ReadLine(), out int paymentAmount))
+                            bool repeat = true;
+                            while (repeat)
                             {
-                                int change = paymentAmount - total;
-                                if (change >= 0)
+                                Console.Write("Masukkan jumlah uang yang dibayarkan: ");
+                                if (int.TryParse(Console.ReadLine(), out int paymentAmount))
                                 {
-                                    Console.WriteLine("Kembalian: " + change);
+                                    int change = paymentAmount - total;
+                                    if (change >= 0)
+                                    {
+                                        Console.WriteLine("Kembalian: " + change);
+                                        repeat = false;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                        
+                                    }
                                 }
+
                                 else
                                 {
-                                    Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                    Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
                                 }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
                             }
                         }
                         else
@@ -142,23 +149,30 @@ class Program
                             Console.WriteLine("Total harga: " + total);
                             Console.WriteLine("Total pembayaran: " + total);
 
+                        bool repeat = true;
+                        while (repeat)
+                        { 
                             Console.Write("Masukkan jumlah uang yang dibayarkan: ");
-                            if (int.TryParse(Console.ReadLine(), out int paymentAmount))
-                            {
-                                int change = paymentAmount - total;
-                                if (change >= 0)
+                                if (int.TryParse(Console.ReadLine(), out int paymentAmount))
                                 {
-                                    Console.WriteLine("Kembalian: " + change);
+                                    int change = paymentAmount - total;
+                                    if (change >= 0)
+                                    {
+                                        Console.WriteLine("Kembalian: " + change);
+                                        repeat = false;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                    }
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
-                            }
+                                    Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
+
+                                }  
+                        }
+
 
                         }
                         else
@@ -213,22 +227,27 @@ class Program
                             Console.WriteLine("Total harga: " + total);
                             Console.WriteLine("Total pembayaran: " + total);
 
-                            Console.Write("Masukkan jumlah uang yang dibayarkan: ");
-                            if (int.TryParse(Console.ReadLine(), out int paymentAmount))
+                            bool repeat = true;
+                            while (repeat)
                             {
-                                int change = paymentAmount - total;
-                                if (change >= 0)
+
+                                Console.Write("Masukkan jumlah uang yang dibayarkan: ");
+                                if (int.TryParse(Console.ReadLine(), out int paymentAmount))
                                 {
-                                    Console.WriteLine("Kembalian: " + change);
+                                    int change = paymentAmount - total;
+                                    if (change >= 0)
+                                    {
+                                        Console.WriteLine("Kembalian: " + change);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                    }
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                    Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
                                 }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
                             }
                         }
                         else
@@ -258,24 +277,24 @@ class Program
 
 
 
-       
+        Console.WriteLine("--------------------------------------------------");
         bool ulangi = true;
-        Console.Write("Apakah Anda Akan Memesan Lagi [Y/N] ?/n ");
-        string jawab = Console.ReadLine();
-        if (ulangi = (jawab == "Y" || jawab == "y" || jawab == "Yes" || jawab == "YES" || jawab == "yes"))
-        {
-            Console.WriteLine("---------------------------------------------------");
-            Console.WriteLine("Selamat datang di TOKO Bajuku!");
 
-            do
+        do
+        {
+            Console.Write(" Apakah Anda Akan Memesan Lagi [Y/N] ? ");
+            string jawab = Console.ReadLine();
+
+            if (jawab == "Y" || jawab == "y" || jawab == "Yes" || jawab == "YES" || jawab == "yes")
             {
+                ulangi = true;
+                Console.WriteLine("Selamat datang di TOKO BAJUKU!");
                 Console.WriteLine("Silakan pilih jenis baju yang ingin dibeli:");
                 Console.WriteLine("1. Kemeja");
                 Console.WriteLine("2. Kaos");
                 Console.WriteLine("3. Celana");
                 Console.Write("Masukkan pilihan Anda (1-3): ");
-
-                if (int.TryParse(Console.ReadLine(), out int ch))
+                if (int.TryParse(Console.ReadLine(), out int cho))
                 {
                     if (choice == 1)
                     {
@@ -314,28 +333,33 @@ class Program
                                     Console.WriteLine("Total harga: " + total);
                                     Console.WriteLine("Total pembayaran: " + total);
 
-                                    Console.Write("Masukkan jumlah uang yang dibayarkan: ");
-                                    if (int.TryParse(Console.ReadLine(), out int paymentAmount))
+                                    bool repeat = true;
+                                    while (repeat)
                                     {
-                                        int change = paymentAmount - total;
-                                        if (change >= 0)
+                                        Console.Write("Masukkan jumlah uang yang dibayarkan: ");
+                                        if (int.TryParse(Console.ReadLine(), out int paymentAmount))
                                         {
-                                            Console.WriteLine("Kembalian: " + change);
+                                            int change = paymentAmount - total;
+                                            if (change >= 0)
+                                            {
+                                                Console.WriteLine("Kembalian: " + change);
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                                repeat = false;
+                                            }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                            Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
                                         }
                                     }
-                                    else
-                                    {
-                                        Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
-                                    }
-
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Jumlah kemeja yang diminta melebihi stok yang tersedia.");
+                                }                            
+                            else
+                            {
+                                Console.WriteLine("Jumlah kemeja yang diminta melebihi stok yang tersedia.");
+                            }
                                 }
                             }
                             else
@@ -366,25 +390,28 @@ class Program
                         }
                         Console.Write("Masukkan pilihan Anda (1-4): ");
 
-                        if (int.TryParse(Console.ReadLine(), out int shirtChoice) && shirtChoice >= 1 && shirtChoice <= products.Count)
+                    if (int.TryParse(Console.ReadLine(), out int shirtChoice) && shirtChoice >= 1 && shirtChoice <= products.Count)
+                    {
+                        Product selectedProduct = products[shirtChoice - 1];
+                        Console.WriteLine("Anda memilih: " + selectedProduct.Name);
+                        Console.Write("Masukkan jumlah kaos yang ingin dibeli: ");
+
+                        if (int.TryParse(Console.ReadLine(), out int quantity))
                         {
-                            Product selectedProduct = products[shirtChoice - 1];
-                            Console.WriteLine("Anda memilih: " + selectedProduct.Name);
-                            Console.Write("Masukkan jumlah kaos yang ingin dibeli: ");
-
-                            if (int.TryParse(Console.ReadLine(), out int quantity))
+                            if (quantity <= selectedProduct.Stock)
                             {
-                                if (quantity <= selectedProduct.Stock)
+                                int total = quantity * selectedProduct.Price;
+                                if (quantity >= 7)
                                 {
-                                    int total = quantity * selectedProduct.Price;
-                                    if (quantity >= 7)
-                                    {
-                                        total -= 10000;
-                                        Console.WriteLine("Diskon: 10000");
-                                    }
-                                    Console.WriteLine("Total harga: " + total);
-                                    Console.WriteLine("Total pembayaran: " + total);
+                                    total -= 10000;
+                                    Console.WriteLine("Diskon: 10000");
+                                }
+                                Console.WriteLine("Total harga: " + total);
+                                Console.WriteLine("Total pembayaran: " + total);
 
+                                bool repeat = true;
+                                while (repeat)
+                                {
                                     Console.Write("Masukkan jumlah uang yang dibayarkan: ");
                                     if (int.TryParse(Console.ReadLine(), out int paymentAmount))
                                     {
@@ -392,24 +419,28 @@ class Program
                                         if (change >= 0)
                                         {
                                             Console.WriteLine("Kembalian: " + change);
+                                            repeat = false;
                                         }
                                         else
                                         {
                                             Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                            ulangi = true;
                                         }
                                     }
                                     else
                                     {
                                         Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
+
                                     }
 
-
-
                                 }
-                                else
-                                {
-                                    Console.WriteLine("Jumlah kaos yang diminta melebihi stok yang tersedia.");
-                                }
+                                
+                            
+
+                            else
+                            {
+                                Console.WriteLine("Jumlah kaos yang diminta melebihi stok yang tersedia.");
+                            }
                             }
                             else
                             {
@@ -420,6 +451,7 @@ class Program
                         {
                             Console.WriteLine("Pilihan tidak valid.");
                         }
+                    
                     }
                     else if (choice == 3)
                     {
@@ -458,24 +490,30 @@ class Program
                                     Console.WriteLine("Total harga: " + total);
                                     Console.WriteLine("Total pembayaran: " + total);
 
-                                    Console.Write("Masukkan jumlah uang yang dibayarkan: ");
-                                    if (int.TryParse(Console.ReadLine(), out int paymentAmount))
+                                  bool repeat = true;
+                                    while (repeat)
                                     {
-                                        int change = paymentAmount - total;
-                                        if (change >= 0)
+                                        Console.Write("Masukkan jumlah uang yang dibayarkan: ");
+                                        if (int.TryParse(Console.ReadLine(), out int paymentAmount))
                                         {
-                                            Console.WriteLine("Kembalian: " + change);
+                                            int change = paymentAmount - total;
+                                            if (change >= 0)
+                                            {
+                                                Console.WriteLine("Kembalian: " + change);
+                                                repeat = false;
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                                ulangi = true;
+                                            }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("Jumlah uang yang dibayarkan tidak cukup.");
+                                            Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
+
                                         }
                                     }
-                                    else
-                                    {
-                                        Console.WriteLine("Jumlah uang yang dibayarkan tidak valid.");
-                                    }
-
                                 }
                                 else
                                 {
@@ -501,19 +539,15 @@ class Program
                 {
                     Console.WriteLine("Pilihan tidak valid.");
                 }
-                
 
+            }
+            else if (jawab == "n" || jawab == "N" || jawab == "No" || jawab == "no")
+                ulangi = false;
 
-            
-                if (jawab == "n" || jawab == "N") {
-                        ulangi = false;
-                } 
-            
-            } while (ulangi);
+        }
+        while (ulangi);
+        Console.Write(" Terimakasih telah berbelanja di Toko  ");
 
-            Console.WriteLine("Oke, Terimakasih...");
-
-        }  
 
     }
 }
