@@ -22,10 +22,34 @@ class Program
             {
                 if (choice == 1)
                 {
-                    Console.WriteLine("Sebagai Pembeli");
                     // Menampilkan semua item product
-                    Console.WriteLine("Daftar product:");
-                    ProgramDB.DisplayProduct();
+                    Console.Clear();
+                    Console.WriteLine("------ Pembelian -------");
+                    Console.WriteLine("Pilih kategori:");
+                    Category[] categories = ProgramDB.getAllCategory();
+                    foreach (var category in categories)
+                    {
+                        Console.WriteLine($"ID: {category.Id} {category.Name}");
+                    }
+                    
+                    Console.Write("Masukkan pilihan Anda (berdasarkan ID): ");
+                    if (int.TryParse(Console.ReadLine(), out int categoryChoice))
+                    {
+                        if (categoryChoice >= 1 && categoryChoice <= categories.Length)
+                        {
+                            Category selectedCategory = categories[categoryChoice - 1];
+                            Console.WriteLine("Anda memilih: " + selectedCategory.Name);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tidak ada pilihan yang sesuai.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input tidak valid.");
+                    }
+                    
                 }
 
                 if (choice == 2)
@@ -37,6 +61,9 @@ class Program
                         ProgramDB.initialProduct();
                         Console.WriteLine("Product added");
                     }
+                    Console.Clear();
+                    Console.WriteLine("Daftar product:");
+                    ProgramDB.DisplayProduct();
                 }
 
             }
